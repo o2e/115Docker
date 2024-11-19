@@ -21,4 +21,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: xiuxiu10201/115:latest
+          tags: bytebuffer/115b:latest
