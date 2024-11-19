@@ -8,7 +8,7 @@ RUN apt install -y wget curl unzip
 RUN apt install -y locales fonts-noto-cjk fonts-wqy-microhei
     # 115 依赖
 RUN apt install -y libnss3
-RUN apt install -y libasound2
+RUN apt install -y libasound2-dev
 RUN apt install -y libgbm1
     # 文件管理和状态栏
 RUN apt install -y pcmanfm tint2
