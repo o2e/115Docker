@@ -2,24 +2,24 @@ FROM debian:latest
 EXPOSE 1150
 COPY run.sh /run.sh
 WORKDIR /usr/local/115Browser
-RUN apt update && \
-    apt install -y wget curl unzip && \
+RUN apt update
+RUN apt install -y wget curl unzip
     # 中文字体
-    apt install -y locales fonts-noto-cjk fonts-wqy-microhei && \ 
+RUN apt install -y locales fonts-noto-cjk fonts-wqy-microhei
     # 115 依赖
-    apt install -y libnss3 libasound2 libgbm1 && \
+RUN apt install -y libnss3 libasound2 libgbm1
     # 文件管理和状态栏
-    apt install -y pcmanfm tint2 && \
+RUN apt install -y pcmanfm tint2
     # VNC
-    apt install -y xvfb x11vnc openbox novnc websockify && \
+RUN apt install -y xvfb x11vnc openbox novnc websockify
     # libatk1.0-0 libnss3 libatk-bridge2.0-0 libgbm1 libxkbcommon0 libasound2 locales fonts-noto-cjk fonts-wqy-microhei unzip pcmanfm tint2&& \
-    wget -q --no-check-certificate -c https://github.com/dream10201/115Cookie/archive/refs/heads/master.zip && \
-    unzip -j master.zip -d /usr/local/115Cookie/ && \
-    rm master.zip && \
-    wget -q --no-check-certificate -c https://down.115.com/client/115pc/lin/115br_v27.0.6.9.deb && \
+RUN wget -q --no-check-certificate -c https://github.com/dream10201/115Cookie/archive/refs/heads/master.zip
+RUN unzip -j master.zip -d /usr/local/115Cookie/ && \
+    rm master.zip
+RUN wget -q --no-check-certificate -c https://down.115.com/client/115pc/lin/115br_v27.0.6.9.deb && \
     apt install ./115br_v27.0.6.9.deb && \
-    rm 115br_v27.0.6.9.deb && \
-    apt clean -y && \
+    rm 115br_v27.0.6.9.deb
+RUN apt clean -y && \
     apt autoclean -y && \
     apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* && \
