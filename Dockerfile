@@ -73,5 +73,5 @@ RUN apt clean -y && \
     --disable-smooth-scrolling \
     --lang=zh-CN \
     --disable-software-rasterizer \
-    >/dev/null 2>&1 &" >> /usr/local/115Browser/115.sh
+    > /opt/115/logs.log 2>&1 &" >> /usr/local/115Browser/115.sh
 CMD ["/run.sh"]
