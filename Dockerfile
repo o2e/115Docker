@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:latest
 EXPOSE 1150
 COPY run.sh /run.sh
 WORKDIR /usr/local/115Browser
